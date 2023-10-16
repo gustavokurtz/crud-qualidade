@@ -1,1 +1,20 @@
-Hoje eu to gravando a aulas!
+{
+  "todos": [
+    {
+      "date": "2023-10-16T23:32:25.161Z",
+      "content": "Primeira TODO!",
+      "done": false
+    },
+    {
+      "date": "2023-10-16T23:32:25.162Z",
+      "content": "Segunda TODO!",
+      "done": false
+    },
+    {
+      "date": "2023-10-16T23:32:25.163Z",
+      "content": "Terceira TODO!",
+      "done": false
+    }
+  ],
+  "dogs": []
+}
