@@ -1,20 +1,22 @@
 {
   "todos": [
     {
-      "date": "2023-10-16T23:32:25.161Z",
+      "id": "03a7a0be-fe7a-41e5-95a4-56323c7a988b",
+      "date": "2023-10-17T18:20:21.378Z",
       "content": "Primeira TODO!",
       "done": false
     },
     {
-      "date": "2023-10-16T23:32:25.162Z",
-      "content": "Segunda TODO!",
+      "id": "00af0be9-fbc2-4e50-92a8-aa5d5bf077f1",
+      "date": "2023-10-17T18:20:21.379Z",
+      "content": "Primeira TODO!",
       "done": false
     },
     {
-      "date": "2023-10-16T23:32:25.163Z",
-      "content": "Terceira TODO!",
+      "id": "af3b243f-7221-40f5-ad89-59b833f8b7b9",
+      "date": "2023-10-17T18:20:21.380Z",
+      "content": "Comer a lele!",
       "done": false
     }
-  ],
-  "dogs": []
+  ]
 }
