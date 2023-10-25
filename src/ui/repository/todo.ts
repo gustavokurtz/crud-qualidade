@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { Todo, TodoSchema } from "@ui/schema/todo";
+
 interface TodoRepositoryGetParams {
     page: number;
     limit: number;
@@ -28,18 +31,47 @@ function get({
     );
 }
 
+export async function createByContent(content: string): Promise<Todo> {
+    const response = await fetch("/api/todos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            content,
+        }),
+    });
+    if (response.ok) {
+        const serverResponse = await response.json();
+        const serverResponseSchema = z.object({
+            todo: TodoSchema,
+        });
+        const serverResponseParsed =
+            serverResponseSchema.safeParse(serverResponse);
+        if (!serverResponseParsed.success) {
+            throw new Error("Failed to create TODO ;(");
+        }
+        // eslint-disable-next-line no-console
+        console.log("serverResponse", serverResponseParsed);
+        const todo = serverResponseParsed.data.todo;
+        return todo;
+    }
+
+    throw new Error("Failed to crete TODO ;/ ");
+}
+
 export const todoRepository = {
     get,
+    createByContent,
 };
 
 // Model/Schema
-interface Todo {
-    id: string;
-    content: string;
-    date: Date;
-    done: boolean;
-}
-
+// interface Todo {
+//     id: string;
+//     content: string;
+//     date: Date;
+//     done: boolean;
+// }
 function parseTodosFromServer(responseBody: unknown): {
     total: number;
     pages: number;
@@ -74,7 +106,7 @@ function parseTodosFromServer(responseBody: unknown): {
                     id,
                     content,
                     done: String(done).toLowerCase() === "true",
-                    date: new Date(date),
+                    date: date,
                 };
             }),
         };
