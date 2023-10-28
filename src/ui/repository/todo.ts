@@ -60,9 +60,32 @@ export async function createByContent(content: string): Promise<Todo> {
     throw new Error("Failed to crete TODO ;/ ");
 }
 
+async function toggleDone(todoId: string): Promise<Todo> {
+    const response = await fetch(`/api/todos/${todoId}/toggle-done`, {
+        method: "PUT",
+    });
+
+    if (response.ok) {
+        const serverResponse = await response.json();
+        const serverResponseSchema = z.object({
+            todo: TodoSchema,
+        });
+        const serverResponseParsed =
+            serverResponseSchema.safeParse(serverResponse);
+
+        if (!serverResponseParsed.success) {
+            throw new Error(`Failed to updadate TODO id ${todoId}`);
+        }
+        const updatedTodo = serverResponseParsed.data.todo;
+        return updatedTodo;
+    }
+    throw new Error("Server Error");
+}
+
 export const todoRepository = {
     get,
     createByContent,
+    toggleDone,
 };
 
 // Model/Schema

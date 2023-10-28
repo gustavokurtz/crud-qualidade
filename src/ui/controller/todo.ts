@@ -51,8 +51,36 @@ function create({ content, onSuccess, onError }: todoControllerCreateParams) {
         });
 }
 
+interface todoControllerToggleDoneParams {
+    id: string;
+    updateTodoOnScreen: () => void;
+    onError: () => void;
+}
+
+function toggleDone({
+    id,
+    updateTodoOnScreen,
+    onError,
+}: todoControllerToggleDoneParams) {
+    // Optmistic Update
+
+    todoRepository
+        .toggleDone(id)
+        .then(() => {
+            // updateReal
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
+            setTimeout(() => {
+                updateTodoOnScreen();
+            }, 1 * 500);
+        })
+        .catch(() => {
+            onError();
+        });
+}
+
 export const todoController = {
     get,
     filterTodosByContent,
     create,
+    toggleDone,
 };
