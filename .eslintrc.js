@@ -12,7 +12,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:cypress/recommended",
-        "plugin:prettier/recommended",
+        // "plugin:prettier/recommended",
     ],
     overrides: [],
     parserOptions: {
