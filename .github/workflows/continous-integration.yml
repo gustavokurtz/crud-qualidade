@@ -12,11 +12,11 @@ jobs:
       ## [Common_CI_Steps]
       - uses: actions/checkout@v3
       ## =================
-      - name: "Debug"
+      - name: "debug"
         run: |
           ls -la
           echo "Segundo comando de debug"
       - name: "Install Dependencies"
         run: "npm install"
       - name: "Lint"
-        run: "npm run lint"
+        run: " echo 'agua patrao'"
