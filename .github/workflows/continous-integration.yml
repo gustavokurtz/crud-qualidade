@@ -25,4 +25,4 @@ jobs:
 
       # Lint
       - name: "Lint"
-        run: " echo 'npm run lint'"
+        run: " echo 'npm run cara'"
