@@ -49,22 +49,10 @@
       "done": false
     },
     {
-      "id": "a9bd3dcd-ef6e-402b-9a6f-aa37d1f37123",
-      "date": "2023-10-25T01:04:58.638Z",
-      "content": "correr",
-      "done": false
-    },
-    {
-      "id": "e987aa36-2d31-40b8-b1e3-13ce7c8fe56e",
-      "date": "2023-10-25T01:19:52.989Z",
-      "content": "comer a leticia",
-      "done": true
-    },
-    {
       "id": "1631172a-b304-4a4c-bf5f-de948eac8037",
       "date": "2023-10-27T03:00:32.498Z",
       "content": "sdada",
-      "done": true
+      "done": false
     }
   ]
 }
