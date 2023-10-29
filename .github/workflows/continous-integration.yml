@@ -19,4 +19,4 @@ jobs:
       - name: "Install Dependencies"
         run: "npm install"
       - name: "Lint"
-        run: "echo 'substituindo npm run lint até sair erros'"
+        run: "echo 'substituindo lint até sair erros'"
