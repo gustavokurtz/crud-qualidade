@@ -1,13 +1,24 @@
 name: "[CI] Continuous Integration"
 
-# Sempre que tiver um commit ou um PR for aberto
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches:
+      - main
 
-jobs: 
-  lint: 
+jobs:
+  lint:
     runs-on: ubuntu-latest
-    steps: 
-        - name: "Lint"
-          run: "npm run lint"
+    steps:
+      - name: "Lint"
+        run: "npm run lint"
+
+  create-pull-request:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: "Create Pull Request"
+        uses: actions/create-pull-request@v5
+        with:
+          title: "Lint fix"
+          body: "This pull request fixes the lint errors found in the last commit."
+          target: "main"
