@@ -10,5 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Lint"
+<<<<<<< HEAD
         run: "'lele te amo mtmtt'"
+=======
+        run: "'lele te mamo'"
+>>>>>>> 99d552c2575a6001ad88c66c86718e8cabccc8dd
 
