@@ -104,7 +104,7 @@ async function deleteById(req: NextApiRequest, res: NextApiResponse) {
         res.status(400).json({
             error: {
                 message: "You  must to provide a valid id",
-       },
+            },
         });
         return;
     }
