@@ -9,8 +9,8 @@ on:
     types: [opened, synchronize]
 
 env:
-  VERCEL_ORG_ID: nvquWHxA3eADFldS6IK8tX7W
-  VERCEL_PROJECT_ID: prj_63AYbMLPiYGiYreBLPVr4mos1mKu
+  VERCEL_ORG_ID: QQfXYO4KvT9AAiYGWTvW9Sab
+  VERCEL_PROJECT_ID: prj_DVJhr426UPEbuNUvePrM6EFkYqvY
 
 jobs: 
   deploy: 
@@ -21,7 +21,7 @@ jobs:
       ## =================
       - name: "Debug"
         run: |
-          ls -la
+          ls -la    
       - name: "Install Dependencies"
         run: "npm install"
       - name: "Deploy"
