@@ -29,5 +29,11 @@ module.exports = {
     rules: {
         "no-console": ["error", { allow: ["warn", "error"] }],
         "react/no-unknown-property": ["error", { ignore: ["jsx", "global"] }],
-        
+        "prettier/prettier": [
+            "error",
+            {
+                endOfLine: "auto",
+            },
+        ],
+    },
 };
