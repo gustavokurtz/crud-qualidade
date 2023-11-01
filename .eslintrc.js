@@ -12,7 +12,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:cypress/recommended",
-        // "plugin:prettier/recommended",
+        "plugin:prettier/recommended",
     ],
     overrides: [],
     parserOptions: {
@@ -29,5 +29,11 @@ module.exports = {
     rules: {
         "no-console": ["error", { allow: ["warn", "error"] }],
         "react/no-unknown-property": ["error", { ignore: ["jsx", "global"] }],
+        "prettier/prettier": [
+            "error",
+            {
+                endOfLine: "auto",
+            },
+        ],
     },
 };
